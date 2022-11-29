@@ -22,3 +22,93 @@ public class Hello     //注意，这块儿的“Hello”要和文件名一致
 
 
 
+## +号使用
+
+```java
+System.out.println(100+98); //198
+System.out.println("100"+98); //10098
+System.out.println(100+3+"hello"); //103hello
+System.out.println("hello"+100+3); //hello1003
+```
+
+**注意：**
+
+1. 从左到右，依次运算
+2. 左右两方，有一方为字符串时，做拼接运算
+3. 左右两方都是数值时，做四则运算
+
+
+
+## 整型细节
+
+```java 
+int n1 =1;
+long n2 = 1L;//定义long型常量为其赋值时要在常量后加"l"或"L"。
+```
+
+
+
+## 浮点数细节
+
+```java
+float	f1 = 1.1; //写法错误，java中，小数默认为double型，若为float型常量赋值，应在常量后加上“F”。
+float	f2 = 1.1F;//正确
+double	f3 = .123; //正确写法，0.123可以省略小数点前的0，但小数点不可省略
+double	f4 = 5.12e2; //意为5.12*(10^2)
+double	f5 = 2.7;
+double	f6 = 8.1 /3; //结果为2.6999997
+```
+
+*对运算结果是小数的进行判断时，要小心。应该是以两个数的差值的绝对值在某个精度范围内进行判断*
+
+```java
+if(Math.abs(f5-f6) < 0.00001)
+{
+    System.out.println("差值非常小，到我的规定精度，认为相等");
+}
+```
+
+## 字符型细节
+
+**java中，char类型的本质是一个整数，再默认输出时，是unicode码对应的字符**
+
+```java
+char c1 ='何';
+System.out.println((int)c1); //“何”对应的unicode码为20309
+char c2 = 20309;
+System.out.println(c2);
+```
+
+```java
+System.out.println('a' + 10); //结果为107。（编译器先将‘a’转换为97，再和10进行运算。
+```
+
+
+
+## bool类型细节
+
+**布尔类型：boolean**		值只能为 true 或 false
+
+不可以以0或非0的整数替代 false 和 true
+
+**和C语言不同**
+
+**和C语言不同**
+
+**和C语言不同**
+
+
+
+## 基本数据类型转换
+
+char -> int -> long -> float -> double
+
+byte -> short -> int -> long -> float -> double
+
+**所以，以下代码正确**
+
+```java
+int a = 'c';
+double d = 80;
+```
+
