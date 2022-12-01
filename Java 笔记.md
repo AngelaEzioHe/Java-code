@@ -5,7 +5,7 @@
 **第一个程序：**
 
 ```java
-//1.public class test表示Hello是一个类，是一个public共有的类
+//1.public class test表示Hello是个类，是一个public共有的类
 //2.Hell0{ }表示一个类的开始和结束
 //3.public static void main(String[] args) 表示一个主方法，即我们程序的入口
 //4.main{ }表示方法的开始和结束
@@ -164,3 +164,118 @@ System.out.println(num6);
 System.out.println(b);
 ```
 
+
+
+## 算术运算符
+
+### 练习一
+
+```java
+int i=1;
+i=i++;
+System.out.println(i); //结果为1
+```
+
+计算机实际过程：
+
+```java
+(1)temp = i;
+(2)i = i +1;
+(3)i = temp;
+```
+
+### 练习二
+
+```java
+int i = 1;
+i = ++i;
+System.out.println(i); //结果为2
+```
+
+计算机实际过程为：
+
+```java
+(1)temp = i;
+(2)i = i + 1;
+(3)i = temp;
+```
+
+
+
+## 逻辑运算符
+
+-  && 和 &的区别
+  - &&(短路与)：如果第一个条件为false，则第二个条件不会判断，最终结果为false，效率高。
+  - &   (逻辑与)：不管第一个条件是否为false，第二个条件都要判断，效率低。
+
+**开发中，我们使用的基本上是短路与&&，效率高。**
+
+- ||和|的区别类似于&&和&。一个效率高一个效率低。
+- ^ 和 ! 表示的含义与C语言相同。
+
+
+
+## 赋值运算符
+
+**有时候复合赋值运算会进行类型转换**
+
+```java
+byte b =3;
+b +=2; //等价于 b = (byte)(b +2);
+//但是 b = b + 2;这样编译会报错。
+```
+
+
+
+## 三元运算符
+
+**经典案例：**实现三个数最大值
+
+```java
+int n1=55;
+int n2=33;
+int n3=123;
+int max1 = n1 > n2 ? n1 : n2;
+int max2 = max1 > m3 ? max1 : n3;
+System.out.println(max2);
+```
+
+
+
+## 键盘输入
+
+```java
+import java.util.Scanner;
+public class Input
+{
+    public static void main(String[] args)
+    {
+        //接收用户的输入
+        //1.引入Scanner所在的包
+        //2.创建 Scanner 对象，new创建一个对象
+		//myScanner就是Scanner类的对象
+        Scanner myScanner = new Scanner(System.in);
+        //3.接收用户输入
+        System.out.println("请输入名字");
+        String name = myScanner.next(); //接收用户输入
+        System.out.println("请输入年龄");
+        int age = myScanner.nextInt(); //接收用户输入
+        System.out.println("请输入薪水");
+        double sal = myScanner.nextDouble(); //接收用户输入
+        System.out.println("人的信息如下");
+        System.out.println("名字：" + name +" 年龄：" + age +" 薪水：" +sal);
+    }    
+}
+
+```
+
+
+
+## 进制
+
+**整数有四种表示方式：**
+
+1. 二进制：0,1，满2进1，以0b或0B开头；
+2. 十进制：略；
+3. 八进制：0-7，满8进1，以数字 0 开头；
+4. 十六进制：0-9及A-F，满16进1，以0x或0X开头表示（A-F不区分大小写）
