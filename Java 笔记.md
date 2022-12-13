@@ -264,6 +264,7 @@ public class Input
         double sal = myScanner.nextDouble(); //接收用户输入
         System.out.println("人的信息如下");
         System.out.println("名字：" + name +" 年龄：" + age +" 薪水：" +sal);
+        char letter = myScanner.next().charAt(0);
     }    
 }
 
@@ -278,4 +279,21 @@ public class Input
 1. 二进制：0,1，满2进1，以0b或0B开头；
 2. 十进制：略；
 3. 八进制：0-7，满8进1，以数字 0 开头；
-4. 十六进制：0-9及A-F，满16进1，以0x或0X开头表示（A-F不区分大小写）
+4. 十六进制：0-9及A-F，满16进1，以0x或0X开头表示 （A-F不区分大小写）
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
