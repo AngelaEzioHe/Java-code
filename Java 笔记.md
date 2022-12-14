@@ -283,9 +283,59 @@ public class Input
 
 
 
+## 跳转控制语句
+
+- break语句出现在多层嵌套的语句块中时，可以通过标签指明要终止的是哪一层语句块
+
+ ```java
+ public class BreakDetail
+ {
+     public static void main(String[] args)
+     {
+         abc1://标签一
+         for(int j=0;j<4;j++)
+         {
+             abc2://标签二
+             for(int i=0;i<10;i++)
+             {
+                 if(i == 2)
+                 {
+                     break abc1;//从abc1中跳出去
+                 }
+                 System.out.println("i = " + i);
+             }
+         }
+     }
+ }
+ ```
+
+## 字符串的比较函数
+
+字符串的比较一般不用 **==** 来比较，一般会使用  **.equals( )** 函数来比较。
+
+**一般形式：**
+
+```java
+String str1;
+String str2;
+str.equals(str2);
+```
+
+- 如果相等，返回true
+- 如果不相等，返回false
+
+当比较 **“林黛玉”** 和 **str** 时，有两种方式：
+
+```java
+str.equals("林黛玉");
+"林黛玉".equals(str);//推荐这个写法，可以避免空指针
+```
 
 
- 
+
+
+
+
 
 
 
