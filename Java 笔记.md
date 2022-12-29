@@ -458,7 +458,31 @@ class  person{
 
 
 
+## 包·入门
 
+```java
+import java.util.Scanner; //只引入java.util 包下的 Scanner类
+import java.util.*; // 将 java.util 包下的所有类都引入
+```
+
+**建议：**
+
+需要哪个类，就导入哪个类即可(向设计者看齐)
+
+
+
+```java
+package com.hyfstu.pkg;
+//package 的作用是声明当前类所在的包，需放在类（或文件）的最上面
+//一个类中最多只有一句 package
+import java.util.Scanner;
+//import指令 位置在 package 下面，可以有多条且没有顺序要求
+public class PkgDetail {
+    public static void main(String[] args) {
+
+    }
+}
+```
 
 
 
