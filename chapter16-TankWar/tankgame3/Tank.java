@@ -8,7 +8,8 @@ public class Tank {
     private int x;
     private int y;
     private int direct; //坦克方向 0,1,2,3
-    private int speed=1;
+    private int speed = 1;
+    boolean isLive = true;
 
     //上下左右移动方法
     public void moveUp() {
