@@ -20,7 +20,7 @@ public class AllTypeClass {
         Class<Class> cls9 = Class.class;
 
 
-        
+
 
         System.out.println(cls1);
         System.out.println(cls2);
