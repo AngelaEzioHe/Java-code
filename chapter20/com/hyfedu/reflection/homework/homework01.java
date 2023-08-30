@@ -1,6 +1,7 @@
 package com.hyfedu.reflection.homework;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
@@ -8,7 +9,7 @@ import java.lang.reflect.Method;
  * @Date: 2023/8/30 23:43
  */
 public class homework01 {
-    public static void main(String[] args) throws InstantiationException, IllegalAccessException, NoSuchFieldException, NoSuchMethodException {
+    public static void main(String[] args) throws InstantiationException, IllegalAccessException, NoSuchFieldException, NoSuchMethodException, InvocationTargetException {
         //1.得到 PrivateTest 类对应的 Class 对象
         Class<PrivateTest> privateTestClass = PrivateTest.class;
         //2。创建对象实例
@@ -20,7 +21,9 @@ public class homework01 {
         name.set(privateTestObj,"马超菜菜");
         //5.得到 getName 方法对象
         Method getName = privateTestClass.getMethod("getName");
-        
+        //6.因为 getName() 是 public，所以直接调用
+        Object invoke = getName.invoke(privateTestObj);
+        System.out.println("name属性值="+invoke);
     }
 }
 
